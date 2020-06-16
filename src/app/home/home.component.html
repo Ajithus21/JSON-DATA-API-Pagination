@@ -1,0 +1,20 @@
+<div class="bg-dark">
+    <h2 class="text-light text-center bg-dark mt-2 mb-2">Json Data</h2>
+    <hr class="bg-warning">
+    <div class="row bg-dark" >
+    
+        <div *ngFor="let data of pageOfItems" class="card text-white bg-danger mb-3 m-3" style="max-width: 18rem;">
+            <div class="card-header">{{data.name}}</div>
+            <div class="card-body">
+            <h5 class="card-title">Id:{{data.id}}</h5>
+            <p class="card-text">{{data.email}}</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf = "myData" class="text-center">
+        <app-pagination [items]="myData" (changePage)="onChangePage($event)"></app-pagination>
+    </div>
+    
+</div>
+
+
